@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOL BAP K</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #ddd;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+        }
+
+        header img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        header h1 {
+            color: #67f3c9;
+            font-size: 24px;
+        }
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        nav a {
+            color: #67f3c9;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .container {
+            padding: 40px;
+        }
+
+        .section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 48%;
+            text-align: center;
+        }
+
+        .card h2 {
+            color: #67f3c9;
+            margin-bottom: 15px;
+        }
+
+        .card a {
+            display: inline-block;
+            color: #67f3c9;
+            text-decoration: none;
+            border: 1px solid #67f3c9;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .card a:hover {
+            background-color: #67f3c9;
+            color: #111;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #555;
+        }
+
+        .trending {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .trending img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .video-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .video-container {
+            display: inline-block;
+            margin: 10px;
+            border: 2px solid #67f3c9;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .video-container:hover {
+            transform: scale(1.05);
+        }
+
+        video {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("Kling AI website loaded.");
+
+            const links = document.querySelectorAll("nav a");
+            links.forEach(link => {
+                link.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    alert(`You clicked on ${link.textContent}`);
+                });
+            });
+
+            const videoContainers = document.querySelectorAll(".video-container");
+            videoContainers.forEach(container => {
+                const video = container.querySelector("video");
+
+                container.addEventListener("click", () => {
+                    video.play();
+                    video.setAttribute("controls", "true");
+                });
+
+                video.addEventListener("ended", () => {
+                    video.removeAttribute("controls");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo">
+        <h1>BAP IS ALWAYS BAP</h1>
+        <nav>
+            <a href="#home">BOL</a>
+            <a href="#explore">BAP</a>
+            <a href="#myspace">K</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>BAP IS ALWAYS BAP</h2>
+
+        <h2>Trending Shorts</h2>
+        <div class="trending">
+            <img src="short1.png" alt="Trending 1">
+            <img src="short2.png" alt="Trending 2">
+            <img src="short3.png" alt="Trending 3">
+        </div>
+
+        <div class="video-section">
+            <h2>Featured Videos</h2>
+            <div class="video-container">
+                <video src="video1.mp4"></video>
+            </div>
+            <div class="video-container">
+                <video src="video2.mp4"></video>
+            </div>
+            <div class="video-container">
+                <video src="video3.mp4"></video>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>BAP IS ALWAYS BAP</p>
+    </footer>
+</body>
+</html>
